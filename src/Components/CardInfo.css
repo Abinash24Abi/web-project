@@ -1,0 +1,86 @@
+.empty-container {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #0b1e33, #1c3a57);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    box-sizing: border-box;
+    flex-direction: column;
+  }
+  
+  .emptymaincontainer {
+    /* background: url('../assest/empty.png') center center no-repeat; */
+    background-size: contain;
+    width: 100%;
+    max-width: 600px;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .emptytext {
+    color: #ffffff;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1rem 2rem;
+    border-radius: 12px;
+  }
+  
+  /* Responsive Table Container */
+  .table-responsive {
+    overflow-x: auto;
+  }
+  
+  /* Table styling */
+  table {
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  td, th {
+    padding: 1rem;
+    vertical-align: middle;
+    text-align: center;
+  }
+  
+  img {
+    border-radius: 8px;
+  }
+  
+  /* Buttons */
+  button {
+    min-width: 100px;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 768px) {
+    .emptytext {
+      font-size: 1.5rem;
+    }
+  
+    .emptymaincontainer {
+      height: 40vh;
+      background-size: contain;
+    }
+  
+    td {
+      font-size: 0.9rem;
+    }
+  
+    button {
+      padding: 0.4rem 0.8rem;
+      font-size: 0.9rem;
+      min-width: 80px;
+    }
+  }
+  

@@ -1,0 +1,26 @@
+/* src/Auth.css */
+
+input::placeholder {
+    font-size: 0.95rem;
+    color: #999;
+  }
+  
+  .btn-success {
+    background-color: #2ecc71;
+    border-color: #27ae60;
+  }
+  
+  .btn-success:hover {
+    background-color: #27ae60;
+    border-color: #219150;
+  }
+  
+  @media (max-width: 768px) {
+    .rounded-start {
+      border-radius: 0 !important;
+    }
+    .rounded-end {
+      border-radius: 0 !important;
+    }
+  }
+  

@@ -1,0 +1,17 @@
+.footer h5{
+  color: white !important;
+  font-size: 1.6rem;
+}
+
+.footer ul li a{
+    color: white;
+    font-size: 1.5rem;
+}
+
+.footer p{
+  font-size: 1.1rem;
+}
+
+.footer a svg{
+  font-size: 2rem;
+}
