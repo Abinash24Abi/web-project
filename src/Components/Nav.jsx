@@ -9,7 +9,7 @@ import axios from 'axios';
 import { BsWatch } from "react-icons/bs";
 
 
-const Nav = () => {
+const Nav = () => { 
 
     const nav = useNavigate()
 
@@ -42,10 +42,11 @@ const Nav = () => {
         console.log("logout")
        setShow(true)
        localStorage.clear('useremail')
+       localStorage.setItem('react-use-cart','{"items":[],"isEmpty":true,"totalItems":0,"totalUniqueItems":0,"cartTotal":0,"metadata":{}}')
        axios.get('http://localhost:8989/logout', {
         withCredentials: true
       })
-       .then(() => {console.log("logout successfully")})
+       .then(() => {console.log("logout successfully") ; window.location.reload()})
        .catch(() => {console.log("logOut err")})
       }
       else{
@@ -59,7 +60,7 @@ const Nav = () => {
      <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top z-3">
   <div className="container-fluid">
     {/* <a className="navbar-brand" href="#"> <img src={logo} alt='logo' width='50px' height='50px' /> <span className='logoname'>Tick Tock </span></a> */}
-    <a className="navbar-brand" href="#"> <BsWatch /> <span className='logoname'>Tick Tock </span></a>
+    <a className="navbar-brand" href="#" style={{display:'flex',justifyContent:'center'}}> <BsWatch style={{fontSize:'2rem'}} /> <span className='logoname'>Tick Tock </span></a>
    
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
@@ -92,6 +93,7 @@ const Nav = () => {
         <li className="nav-item">
         <p className="nav-link" onClick={funlog}>{show ? <FaUserXmark style={{ color: 'red' }} /> : <FaUserCheck style={{ color: 'green' }} /> }</p>
         </li>
+        
         
         { /* <li className="nav-item dropdown">
         

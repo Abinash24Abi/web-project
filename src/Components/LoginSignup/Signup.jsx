@@ -27,9 +27,9 @@ function Signup() {
   };
 
   return (
-    <div className="container-fluid min-vh-100 d-flex align-items-center justify-content-center bg-light">
+    <div className="container-fluid min-vh-100 d-flex align-items-center justify-content-center" style={{background:'black'}}>
       <div className="row shadow-lg w-100" style={{ maxWidth: '900px' }}>
-        <div className="col-md-6 bg-success text-white d-flex flex-column justify-content-center align-items-center p-5 rounded-start">
+        <div className="col-md-6 text-white d-flex flex-column justify-content-center align-items-center p-5 rounded-start" style={{background:'black',border:'2px solid white'}}>
           <h2>Join us!</h2>
           <p className="text-center">
             Let's get you on board. We’re excited to have you join our community!
@@ -69,7 +69,7 @@ function Signup() {
               onChange={handleChange}
               required
             />
-            <button type="submit" className="btn btn-success w-100">Sign Up</button>
+            <button type="submit" className="btn w-100" style={{background:'black' , color:'white'}}>Sign Up</button>
           </form>
         </div>
       </div>

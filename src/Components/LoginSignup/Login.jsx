@@ -2,6 +2,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import './Auth.css';
+import { color } from 'framer-motion';
 
 function Login() {
   const [input, setInput] = useState({ email: '', password: '' });
@@ -32,9 +33,9 @@ function Login() {
   };
 
   return (
-    <div className="container-fluid min-vh-100 d-flex align-items-center justify-content-center bg-light fixed inset-0 backdrop-blur-sm position-fixed top-0 z-10">
-      <div className="row shadow-lg w-100" style={{ maxWidth: '900px' }}>
-        <div className="col-md-6 bg-success text-white d-flex flex-column justify-content-center align-items-center p-5 rounded-start">
+    <div className="container-fluid min-vh-100 d-flex align-items-center justify-content-center  fixed inset-0 backdrop-blur-sm position-fixed top-0 z-10" style={{background:'black'}}>
+      <div className="row shadow-lg w-100" style={{ maxWidth: '900px'  }}>
+        <div className="col-md-6  text-white d-flex flex-column justify-content-center align-items-center p-5 rounded-start" style={{background:'black',border:'2px solid white'}}>
           <h2>Welcome back!</h2>
           <p className="text-center">
             We're happy to see you again.
@@ -65,7 +66,7 @@ function Login() {
               onChange={handleChange}
               required
             />
-            <button type="submit" className="btn btn-success w-100">Submit</button>
+            <button type="submit" className="btn w-100" style={{background:'black' , color:'white'}}>Submit</button>
           </form>
         </div>
       </div>
