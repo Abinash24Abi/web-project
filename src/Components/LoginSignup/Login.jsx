@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import './Auth.css';
 import { color } from 'framer-motion';
+import { toast } from 'react-toastify';
 
 function Login() {
   const [input, setInput] = useState({ email: '', password: '' });
@@ -22,12 +23,17 @@ function Login() {
       if (res.data.Status === 'success') {
         localStorage.setItem('useremail',input.email)
         localStorage.setItem('react-use-cart',res.data.cartinfo)
+        toast.success("Login successful!");
         navigate('/');
+        
         window.location.reload();
       } else {
+       
+        toast.error("Login Failed");
         alert(res.data.Message || 'Login failed');
       }
     } catch (err) {
+     
       alert('Server error');
     }
   };

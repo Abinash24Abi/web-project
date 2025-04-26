@@ -1,0 +1,20 @@
+.buyinfo-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  
+}
+
+.buyinfo-btn{
+    width: 90%;
+    font-size: 2rem;
+    background:rgb(99, 98, 98);
+    color:white;
+    border-radius: 20px;
+}
+
+.buyinfo-btn:hover{
+    background: black;
+    color: white;
+}

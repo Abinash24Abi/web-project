@@ -76,6 +76,7 @@ const AddtoCart = () => {
                 },
                 isHintEnabled: true,
                 enlargedImagePosition: 'beside', // Key change to show beside, not over
+                
               }}
             />
           </div>
@@ -89,7 +90,7 @@ const AddtoCart = () => {
           <div>
             <h3 className="fw-semibold">{data.state.title}</h3>
             <p className="text-muted mb-2">{data.state.text}</p>
-
+            
             <div className="d-flex align-items-center mb-3">
               <span className="badge bg-success me-2">4.1★</span>
               <h4 className="me-2 mb-0 text-success">{data.state.price}</h4>

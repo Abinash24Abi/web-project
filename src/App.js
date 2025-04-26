@@ -18,6 +18,8 @@ import SelectList from './Components/SelectListComponent/SelectList.jsx';
 import { useCart } from 'react-use-cart';
 import axios from 'axios';
 import { useEffect } from 'react';
+import BuyInfo from './Components/BuyInfo.jsx';
+import {ToastContainer} from 'react-toastify'
 
 
 
@@ -59,6 +61,8 @@ useEffect(() => {
 
           <Route path='/selectlist' element={<SelectList />} />
 
+          <Route path='/buyinfo' element={<BuyInfo />} />
+
 
         {/* <Route path="/" element={<SampleHome />} />
         <Route path="/signup" element={<Signup />} />
@@ -68,6 +72,7 @@ useEffect(() => {
           
         </Routes>
       </AnimatePresence>
+      <ToastContainer />
     </div>
   );
 }

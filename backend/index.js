@@ -4,6 +4,8 @@ const cors = require('cors');
 const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
 const bcrypt = require('bcryptjs');
+const nodemailer = require('nodemailer');
+
 const app = express();
 const port = 8989;
 
@@ -135,6 +137,46 @@ app.put('/updatecart',(req,res) => {
     .then(() => res.json({message:'update'}))
     .catch(() => res.json({message:'err'}))
 })
+
+
+
+
+app.post('/send-email', async (req, res) => {
+    const { email, title, price, quantity, total, image } = req.body;
+  
+    // Create a transporter (you can use Gmail or any SMTP service)
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: 'abinashskabi@gmail.com',        // replace with your Gmail
+        pass: 'vbll zfue vnea ovcl'            // use an app password, NOT your Gmail password
+      }
+    });
+  
+    const mailOptions = {
+      from: 'your_email@gmail.com',
+      to: email,
+      subject: 'Purchase Confirmation',
+      html: `
+        <h1>Thank you for your purchase!</h1>
+        <p><strong>Title:</strong> ${title}</p>
+        <p><strong>Price:</strong> ${price}</p>
+        <p><strong>Quantity:</strong> ${quantity}</p>
+        <p><strong>Total:</strong> ${total}</p>
+        <img src="${image}" width="300"/>
+      `
+    };
+  
+    try {
+      await transporter.sendMail(mailOptions);
+      res.json({ message: 'Email sent successfully' });
+    } catch (error) {
+      console.error('Error sending email:', error);
+      res.status(500).json({ error: 'Email failed to send' });
+    }
+  });
+
+
 
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
